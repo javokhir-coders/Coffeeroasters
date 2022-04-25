@@ -33,10 +33,7 @@
 body{
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-image: url("../img/Rectangle-bgi.png"), url("../img/logotip-coffee.png");
-  background-repeat: no-repeat;
-background-size: 1440px 800px, 160px 160px;
-background-position: calc(50%) calc(0px), calc(50%) calc(50px);
+ 
 }
 
 img{
@@ -65,31 +62,37 @@ img{
   margin: -1px;
 }
 
+/* -----------------------------------------HEADER--------------------------------------- */
+
 .header{
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color:#F1D1AC;
+background-image: url("../img/Rectangle-bgi.png");
+background-repeat: no-repeat;
+background-size: 100%;
+background-color: #f3d7b7;
+background-blend-mode: overlay;
 }
 
-.header-inner{
+.header__inner{
   display: flex;
   align-items: center;
 }
 
-.site-ligo-link{
+.header__logo__link{
 text-decoration: none;
 }
 
-.logo-img{
+.header__logo__img{
 width: 235px;
 height: 24px;
 }
 
-.site-menu{
+.header__menu{
   margin-left: auto;
 }
 
-.header-list{
+.header__list{
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -97,11 +100,11 @@ height: 24px;
   padding-left: 0;
 }
 
-.header-item{
+.header__item{
   margin-left: 40px;
 }
 
-.header-item-link{
+.header__item__link{
   text-decoration: none;
   font-weight: 700;
 font-size: 12px;
@@ -111,26 +114,47 @@ text-transform: uppercase;
 color: #333333;
 }
 
-.active-link{
+.header__item__link--active{
   margin-left: 0;
 }
 
+/* -------------------------------------------HEADER------------------------------------- */
+
+
+/* ---------------------------------------HERO------------------------------- */
+
+
 .hero{
-  padding-bottom: 265px;
+  position: relative;
+  padding-bottom: 249px;
   padding-top: 116px;
-  background-image: url("../img/coffee.png");
-  background-repeat: no-repeat;
-background-size: 710px 696px;
-  background-position: calc(50% + 365px) calc(0px);
-  background-color:#F1D1AC;
+  background-image: url("../img/coffee.png"), url("../img/Rectangle-bgi.png");
+background-repeat: no-repeat;
+background-size: 710px 696px, 100%;
+background-color: #f3d7b7;
+background-blend-mode: normal, overlay;
+background-position: calc(50% + 404px) bottom, center;
 }
 
-.hero-inner{
-  width: 464px;
+.hero::before{
+  position: absolute;
+    top:calc(50% - 425px);
+    left:calc(50% - 45px);
+    background-repeat: no-repeat;
+    z-index: 100;
+    width: 223px;
+    height: 223px;
+    overflow: hidden;
+    content: "";
+  background-image: url("../img/logotip-coffee.png");
+}
+
+.hero__inner{
   margin-left: 100px;
+  width: 464px;
 }
 
-.hero-heading {
+.hero__heading {
   font-weight: 700;
   font-size: 64px;
   line-height: 75px;
@@ -138,7 +162,7 @@ background-size: 710px 696px;
   margin-bottom: 24px;
 }
 
-.hero-text {
+.hero__text {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
@@ -146,7 +170,7 @@ background-size: 710px 696px;
   margin-bottom: 50px;
 }
 
-.hero-link {
+.hero__link {
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
@@ -161,8 +185,136 @@ transition: all 0.2s ease;
 border: 2px solid transparent;
 }
 
-.hero-link:hover{
+.hero__link:hover{
   background-color: #FFFFFF;
   color: #0A775F;
   border-color:#0A775F ;
 }
+
+/* -----------------------------------------HERO----------------------------------------- */
+
+/* -------------------------------------------COLLECTION------------------------------------ */
+
+.collection {
+  position: relative;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.collection::before{
+  position: absolute;
+    top:calc(50% - 820px);
+    left:calc(50% - 875px);
+    background-repeat: no-repeat;
+    z-index: 100;
+    width: 402px;
+    height: 300px;
+    overflow: hidden;
+background-image: url("../img/leaves-top.png");
+content: "";
+}
+
+.collection::after{
+  position: absolute;
+  top:calc(50% - 100px);
+  left:calc(50% + 518px);
+  background-repeat: no-repeat;
+  z-index: 100;
+  width: 432px;
+  height: 300px;
+  overflow: hidden;
+background-image: url("../img/leaves-right.png");
+content: "";
+}
+
+.collection__box{
+  width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #F6F6EE;
+}
+
+.collection__box::before{
+  position: absolute;
+  top:calc(50% + 400px);
+  left:calc(50% - 918px);
+  background-repeat: no-repeat;
+  z-index: 100;
+  width: 402px;
+  height: 300px;
+  overflow: hidden;
+background-image: url("../img/leaves-bottom.png");
+content: "";
+}
+
+.collection__box::before{
+  background-image: url("../img/leaves-bottom.png");
+  background-repeat: no-repeat;
+
+}
+
+.collection__inner {
+padding-top: 50px;
+padding-bottom: 50px;
+padding-left: 143px;
+padding-right: 143px;
+}
+
+
+
+.collection__heading {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 59px;
+  text-align: center;
+  font-variant: small-caps;
+  margin: 0;
+  margin-bottom: 80px;
+}
+
+.collection__list {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+
+}
+
+.collection__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+}
+
+.collection__item:nth-child(2n){
+  flex-direction: row-reverse;
+}
+
+.collection__item__img {
+  width: 450px;
+  height: 375px;
+}
+
+.collection__item__content{
+  width: 453px;
+}
+
+.collection__item__heading {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 56px;
+  font-variant: small-caps;
+  color: #333333;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.collection__item__text {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 34px;
+  color: #333333;
+  margin: 0;
+}
+
+
+/* ----------------------------------------COLLECTION-------------------------------------- */
